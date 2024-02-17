@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+    actix_app:
+      build: .
+      container_name: actix_videas
+      restart: unless-stopped
+      volumes:
+        - .:/usr/src/app
+      env_file: .env
+      environment:
+        - RUST_LOG=trace
+      tty: true
+      ports:
+      - "8080:8444"
+
