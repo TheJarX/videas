@@ -2,3 +2,5 @@
 target/
 debug/
 *.sqlite3
+
+**/**/*.swp
