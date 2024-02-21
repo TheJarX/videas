@@ -5,16 +5,10 @@ use crate::utils::wrap_with_html_scaffold;
 use crate::db::models::*;
 use askama_actix::{Template, TemplateToResponse};
 
+mod db;
+mod filters;
 mod posts;
 mod utils;
-mod db;
-
-mod filters {
-    pub fn md_to_html<T: std::fmt::Display>(s: T) -> ::askama::Result<String> {
-        let html = markdown::to_html(&s.to_string());
-        Ok(html)
-    }
-}
 
 #[derive(Template)]
 #[template(path = "index.html")]
