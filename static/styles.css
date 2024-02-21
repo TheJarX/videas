@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Merriweather:300italic,300);
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
   --primary-100:#d4eaf7;
@@ -158,10 +158,8 @@ html, body {
 
 body {
   font-family: 'Merriweather', Georgia, serif;
-  font-weight: 400px;
   padding: 0;
   margin: 0;
-  /* background-color: var(--bg-200); */
 }
 
 p, span {
@@ -246,7 +244,9 @@ footer {
 }
 
 .index-container {
-  width: 70%;
+  margin: 10px auto;
+  width: 65%;
+  gap: 20px;
 }
 
 .index-container__left {
@@ -280,7 +280,8 @@ footer {
 .index-container__right {
   flex-grow: 1;
   width: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   max-height: 80vh;
 }
 
@@ -289,6 +290,7 @@ footer {
   background-color: var(--bg-100);
   color: var(--text-200);
   border-radius: 5px;
+  position: relative;
   margin: 50px 25px;
   padding: 10px 50px;
   width: 60%;
@@ -299,20 +301,30 @@ footer {
   margin: 5px;
 }
 
+.post-container__content__time-estimate {
+  background-color: var(--text-200);
+  color: var(--bg-100);
+  padding: 10px 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-bottom-left-radius: 10px;
+}
+
 .post-card {
-      box-shadow: 0px 1px 0.25rem 0px rgba(0, 0, 0, .1);
-    justify-content: space-between;
-    background-color: #0088ff3d;
-    flex-direction: row;
-    align-items: center;
-    border-radius: 10px;
-    user-select: none;
-    padding: 1px 20px;
-    margin: 10px 5px;
-    cursor: pointer;
-    width: 90%;
-    display: flex;
-    min-height: 200px;
+  box-shadow: 0px 1px 0.25rem 0px rgba(0, 0, 0, .1);
+  justify-content: space-between;
+  background-color: #0088ff3d;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 10px;
+  user-select: none;
+  min-height: 200px;
+  padding: 1px 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  display: flex;
+  width: 90%;
 }
 
 .post-card:hover {
