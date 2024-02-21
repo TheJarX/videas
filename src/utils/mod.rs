@@ -33,6 +33,8 @@ const HTML_SCAFFOLD: &str = "<html>
 ///   HttpResponse::Ok().body(wrap_with_html_scaffold(hello))
 /// }
 /// ```
+//TODO: do not test this, must be removed
 pub fn wrap_with_html_scaffold(content: &str) -> String{
     HTML_SCAFFOLD.replace("@@content@@", content)
 }
+
