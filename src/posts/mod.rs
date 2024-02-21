@@ -1,8 +1,9 @@
 //! Contains abstracions related to Posts; mainly db queries
-use crate::db;
-use crate::db::models::*;
-use crate::db::schema::*;
+use super::db;
+use super::db::models::*;
+use super::db::schema::*;
 use diesel::prelude::*;
+//TODO: test these methods
 
 /// Get all records in the `post` table showing the most recent first
 ///
@@ -18,6 +19,8 @@ pub fn all() -> Vec<Post> {
 ///
 /// # Examples
 /// ```rust
+///
+/// let my_id = 1;
 /// if let Ok(post) = posts::one(my_id) {
 ///  // do something...
 /// }
