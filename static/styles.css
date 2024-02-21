@@ -290,6 +290,7 @@ footer {
   background-color: var(--bg-100);
   color: var(--text-200);
   border-radius: 5px;
+  position: relative;
   margin: 50px 25px;
   padding: 10px 50px;
   width: 60%;
@@ -298,6 +299,16 @@ footer {
 .post-container__content img {
   width: 100%;
   margin: 5px;
+}
+
+.post-container__content__time-estimate {
+  background-color: var(--text-200);
+  color: var(--bg-100);
+  padding: 10px 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-bottom-left-radius: 10px;
 }
 
 .post-card {

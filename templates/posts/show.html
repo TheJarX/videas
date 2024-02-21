@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="flex flex-col content-center items-center post-container">
+  <div class="post-container__content">
+    <!-- Got 238 from here https://thereadtime.com/ -->
+    <span class="post-container__content__time-estimate">Reading time: ~{{ post.content|wordcount / 238 }} min</span>
+    {{ post.content|md_to_html|safe }}
+  </div>
+</div>
+{% endblock %}
