@@ -6,5 +6,6 @@ diesel::table! {
         title -> Text,
         content -> Text,
         created_at -> Text,
+        slug -> Text,
     }
 }
