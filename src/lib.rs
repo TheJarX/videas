@@ -18,6 +18,10 @@ pub mod templates {
     }
 
     #[derive(Template)]
+    #[template(path = "404.html")]
+    pub struct NotFoundTemplate {}
+
+    #[derive(Template)]
     #[template(path = "posts/show.html")]
     pub struct ShowTemplate<'a> {
         pub post: &'a Post,

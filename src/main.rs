@@ -3,7 +3,6 @@ use actix_files as fs;
 use dotenvy::dotenv;
 use videas::routes::*;
 
-
 #[actix_web::main]
 #[doc(hidden)]
 async fn main() -> std::io::Result<()> {
@@ -16,7 +15,7 @@ async fn main() -> std::io::Result<()> {
             .service(fs::Files::new("/static", "./static"))
             .service(ping)
             .service(index)
-            .service(show_entry)
+            .service(show_post)
     })
     .bind(("0.0.0.0", 8080))?
     .run()
