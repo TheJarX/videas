@@ -15,7 +15,7 @@ pub fn all() -> Vec<Post> {
     post::table.order(post::created_at.desc()).load(conn).expect("Error loading posts")
 }
 
-/// Find one `Post` in the db
+/// Find one `Post` in the db using its primary key
 ///
 /// # Examples
 /// ```rust
@@ -28,5 +28,20 @@ pub fn all() -> Vec<Post> {
 pub fn one(id: i32) -> QueryResult<Post> {
     let conn = &mut db::connect_db();
     post::table.find(id).first(conn)
+}
+
+/// Find one `Post` in the db using its slug
+///
+/// # Examples
+/// ```rust
+///
+/// let my_id = 1;
+/// if let Ok(post) = posts::one(my_id) {
+///  // do something...
+/// }
+/// ```
+pub fn one_by_slug(slug: &str) -> QueryResult<Post> {
+    let conn = &mut db::connect_db();
+    post::table.filter(post::slug.eq(slug)).first(conn)
 }
 

@@ -1,9 +1,11 @@
 use actix_web::{get, HttpResponse, Responder, web};
-use super::utils::wrap_with_html_scaffold;
+use log::{info};
 use super::templates::*;
 use super::posts;
 use askama_actix::TemplateToResponse;
 
+// Due sqlite limitations this is the defaul value of posts' slug
+const NO_SLUG: &str = "NO_SLUG";
 
 
 #[get("ping")]
@@ -19,14 +21,23 @@ pub async fn index() -> impl Responder {
     IndexTemplate { posts: &posts_ }.to_response()
 }
 
-#[get("/entry/{id}")]
+#[get("/post/{slug}")]
 #[doc(hidden)]
-pub async fn show_entry(path: web::Path<i32>) -> impl Responder {
-    if let Ok(post_) = posts::one(path.into_inner()) {
+pub async fn show_post(path: web::Path<String>) -> impl Responder {
+    let slug = path.into_inner();
+
+    if slug.eq(NO_SLUG) {
+        return log_and_render_not_found("Default slug was found!");
+    }
+    if let Ok(post_) = posts::one_by_slug(&slug) {
         ShowTemplate { post: &post_ }.to_response()
     } else {
-        // TODO: Add a proper 404 page
-        HttpResponse::NotFound().body(wrap_with_html_scaffold("<h1>NOT FOUND</h1>"))
+        log_and_render_not_found("Not found")
     }
+}
+
+fn log_and_render_not_found(message: &str) -> HttpResponse {
+    info!("{}; rendering 404", message);
+    NotFoundTemplate {}.to_response()
 }
 
