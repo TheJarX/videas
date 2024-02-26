@@ -49,3 +49,4 @@ I started this project one night I got anxious because I lost my Scribe stylus a
 
 That said, please bear with any mistakes my unconscious self may have made. I plan to clean up this project to ensure that setting up your blog is a matter of minutes.
 
+> If you find your work (or parts of it) and it's not being properly used (wrong use of the license for instance), please refer to <hello@itsgerard.com>.
