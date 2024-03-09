@@ -11,4 +11,5 @@ pub struct Post {
     pub content: String,
     pub created_at: String,
     pub slug: String,
+    pub tags: String,
 }

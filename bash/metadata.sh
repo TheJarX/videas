@@ -7,6 +7,7 @@ extractMetadataBlock() {
   local data=""
 
   # Read the file content
+  echo "FILE: $filePath"
   fileContent=$(<"$filePath")
 
   # Extract the data between the ==== markers
@@ -39,8 +40,9 @@ extractTags() {
 
   tagsContent=$(echo "$block" | sed -n 's!^tags:\s*!!p' | xargs)
   # Create an array from the tags
-  IFS=', ' read -ra tagsArray <<< "$tagsContent"
-
-  echo "${tagsArray[@]}"
+  # Well keep the comma separated string format for now
+  # IFS=', ' read -ra tagsArray <<< "$tagsContent"
+  # echo "${tagsArray[@]}"
+  echo "$tagsContent"
 }
 

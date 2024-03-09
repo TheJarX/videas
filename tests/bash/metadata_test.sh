@@ -38,8 +38,8 @@ testExtractTags() {
   local result=$(extractTags "$METADATA")
 
   assertNotNull "$result"
-  assertContains "$result[@]" "Tag1"
-  assertNotContains "$result[@]" "Tag10"
+  assertContains "$result" "Tag1"
+  assertNotContains "$result" "Tag10"
 }
 
 oneTimeSetUp(){
@@ -47,7 +47,6 @@ oneTimeSetUp(){
   source "${TESTING_DIR}/../../bash/metadata.sh"
 
   local tmpFile=$(createAndGetTmpEntry)
-  echo "TMP: $tmpFile" >> log.txt
   METADATA=$(extractMetadataBlock "$tmpFile")
 }
 
