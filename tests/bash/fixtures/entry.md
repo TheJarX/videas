@@ -2,6 +2,7 @@
 title: "This is an interesting article"
 slug: "interesting-article"
 tags: Tag1, Tag2, Tag3, Tag4
+description: "In this article we're going to talk about interesting things. Let's explore awesome stuff."
 ====
 
 ## Headers

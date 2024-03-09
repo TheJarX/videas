@@ -40,9 +40,19 @@ extractTags() {
 
   tagsContent=$(echo "$block" | sed -n 's!^tags:\s*!!p' | xargs)
   # Create an array from the tags
-  # Well keep the comma separated string format for now
   # IFS=', ' read -ra tagsArray <<< "$tagsContent"
   # echo "${tagsArray[@]}"
+
+  # Well keep the comma separated string format for now
   echo "$tagsContent"
+}
+
+extractDescription() {
+  local block="$1"
+  local description=""
+
+  description=$(echo "$block" | sed -n 's!^description:\s*!!p' | xargs)
+
+  echo "$description"
 }
 

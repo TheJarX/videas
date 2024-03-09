@@ -12,4 +12,6 @@ pub struct Post {
     pub created_at: String,
     pub slug: String,
     pub tags: String,
+    // Since `abstract is a reserved keyword we're using `description` in rust
+    pub description: String,
 }

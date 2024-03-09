@@ -11,10 +11,11 @@ if [ -f "$file" ]; then
   # import metadata helpers
   . "./bash/metadata.sh"
   metadataBlock=$(extractMetadataBlock "$file")
+
+  abstract=$(extractDescription "$metadataBlock")
   title=$(extractTitle "$metadataBlock")
   slug=$(extractSlug "$metadataBlock")
   tags=$(extractTags "$metadataBlock")
-  # TODO: add extractAbstract
 
   sqlite3 -line "$dbPath" \
     "INSERT INTO post VALUES( \
@@ -23,7 +24,8 @@ if [ -f "$file" ]; then
     readfile('$file'), \
     datetime('now'), \
     '$slug', \
-    '$tags' \
+    '$tags', \
+    '$abstract' \
     );"
 fi
 

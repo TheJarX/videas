@@ -8,5 +8,6 @@ diesel::table! {
         created_at -> Text,
         slug -> Text,
         tags -> Text,
+        description -> Text,
     }
 }

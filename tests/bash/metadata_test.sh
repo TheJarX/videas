@@ -34,6 +34,14 @@ testExtractSlug() {
   assertEquals "$expected" "$result"
 }
 
+testExtractDescription() {
+  local result=$(extractDescription "$METADATA")
+  local expected="In this article we're going to talk about interesting things. Let's explore awesome stuff."
+
+  assertNotNull "$result"
+  assertEquals "$expected" "$result"
+}
+
 testExtractTags() {
   local result=$(extractTags "$METADATA")
 
