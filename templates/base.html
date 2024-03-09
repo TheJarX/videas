@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     {% block head %}
-    <title>Gerard's VIdeas</title>
+      {% include "head_base.html" %}
+    {% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Partial use of copyrighted content (c) 2014-2015 John Otander -->
     <link rel="stylesheet" type="text/css" href="/static/styles.css">
-    {% endblock %}
   </head>
   <body class="flex flex-col">
     <header>
