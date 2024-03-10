@@ -1,5 +1,5 @@
 {% let url = "https://itsgerard.com/"%}
-{% let cover = "/static/cover.jpeg" %}
+{% let cover = "static/cover.jpeg" %}
 {% let main_title = "Gerard altamirano - Videas" %}
 {% let main_content_desc = "Developer with expertise in Full-Stack, games development, and bash automation (I code scripts because I'm lazy lol). Passionate about education." %}
 
@@ -13,12 +13,12 @@
 <meta property="og:url" content="{{ url }}" />
 <meta property="og:title" content="{{ main_title }}" />
 <meta property="og:description" content="{{ main_content_desc }}" />
-<meta property="og:image" content="{{ cover }}" />
+<meta property="og:image" content="{{ url }}{{ cover }}" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="{{ url }}" />
 <meta property="twitter:title" content="{{ main_title }}" />
 <meta property="twitter:description" content="{{ main_content_desc }}" />
-<meta property="twitter:image" content="{{ cover }}" />
+<meta property="twitter:image" content="{{ url }}{{ cover }}" />
 <!-- Meta Tags Generated with https://metatags.io (in case you want to generate yours manually -->
