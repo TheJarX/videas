@@ -37,8 +37,16 @@ diesel setup # Migrations
 # Finally
 cargo run
 ```
-
 > These instructions might be not accurate, please open an issue if you face any trouble.
+
+### Writing a post
+To create a post it's simple as opening the `write_entry` script:
+```bash
+bash write_entry.sh
+```
+This will open a vim editor. And that's it, once you finish writing your post using MD it should be saved into the DB.
+
+> Please take in consideration that this project is still in progress. You may find vulnerabilities and issues in the process of creating a post. In any case you can refer to the `tests/bash` folder to check the status of the work regarding bash scripts. (you can run `bash tests/bash/runAll.sh` from the root directory.
 
 ## Personal note from me
 I started this project one night I got anxious because I lost my Scribe stylus and had to write down my daily report (therapy stuff). And after 10 minutes I got a funcional (albeit ugly version running on my home server). My objectives were:
