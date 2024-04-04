@@ -3,15 +3,9 @@
 <div class="flex index-container">
   <div class="index-container__left">
     <div>
-      <!-- PIC -->
-      <img src="https://avatars.githubusercontent.com/u/35399391" >
-      <-- PIC -->
+      {% include "config/picture.html" %}
     </div>
-    <!-- BIO -->
-    <!-- This is where you want to put your Bio -->
-    <p class="justified">Developer with expertise in Full-Stack, games development, and bash automation (I code scripts because I'm lazy lol).</p>
-    <p class="justified">I'm refreshing my website (including the blog), and you're lucky to see this new version (WIP). I'm planning to make the project open source since it has a couple of interesting things; need to finish some stuff first.</p>
-      <!-- ENDBIO -->
+    {% include "config/bio.html" %}
   </div>
   <div class="index-container__right">
     {% for post in posts %}

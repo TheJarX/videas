@@ -37,9 +37,19 @@ diesel setup # Migrations
 # Finally
 cargo run
 ```
-> These instructions might be not accurate, please open an issue if you face any trouble.
+#### Cargo watch
+During development it's better to use `cargo watch` in order to save time when making changes and trying to testing them in the browser. You can find the repo [here](https://github.com/watchexec/cargo-watch)
+```bash
+cargo watch -c --why -d 5 -x run # this is the one I use
+```
+> These instructions might be not entirely accurate, please open an issue if you face any trouble.
 
-### Writing a post
+## Customisation
+To add your picture, name, links, and so forth, you can go to `templates/config`. You'll find a set of HTML files ready for customisation. The only thing you won't find here is the title of the main page, which can be edited in `templates/base.html`.
+
+Remember, this project is open source. Meaning that you can navigate through the code to customise whatever you want or need.
+
+## Writing a post
 To create a post it's simple as opening the `write_entry` script:
 ```bash
 bash write_entry.sh
