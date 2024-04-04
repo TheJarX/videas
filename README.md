@@ -49,6 +49,15 @@ To add your picture, name, links, and so forth, you can go to `templates/config`
 
 Remember, this project is open source. Meaning that you can navigate through the code to customise whatever you want or need.
 
+## Writing a post
+To create a post it's simple as opening the `write_entry` script:
+```bash
+bash write_entry.sh
+```
+This will open a vim editor. And that's it, once you finish writing your post using MD it should be saved into the DB.
+
+> Please take in consideration that this project is still in progress. You may find vulnerabilities and issues in the process of creating a post. In any case you can refer to the `tests/bash` folder to check the status of the work regarding bash scripts. (you can run `bash tests/bash/runAll.sh` from the root directory.
+
 ## Personal note from me
 I started this project one night I got anxious because I lost my Scribe stylus and had to write down my daily report (therapy stuff). And after 10 minutes I got a funcional (albeit ugly version running on my home server). My objectives were:
 1. Don't use too complicated stuff (as I intented to design at the beginning)
@@ -58,3 +67,4 @@ I started this project one night I got anxious because I lost my Scribe stylus a
 
 That said, please bear with any mistakes my unconscious self may have made. I plan to clean up this project to ensure that setting up your blog is a matter of minutes.
 
+> If you find your work (or parts of it) and it's not being properly used (wrong use of the license for instance), please refer to <hello@itsgerard.com>.
