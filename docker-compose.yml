@@ -9,7 +9,7 @@ services:
         - .:/usr/src/app
       env_file: .env
       environment:
-        - RUST_LOG=trace
+        - RUST_LOG=debug
       tty: true
       ports:
       - "8080:8080"
