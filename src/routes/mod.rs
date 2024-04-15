@@ -1,12 +1,11 @@
-use actix_web::{get, HttpResponse, Responder, web};
-use log::{info};
-use super::templates::*;
 use super::posts;
+use super::templates::*;
+use actix_web::{get, web, HttpResponse, Responder};
 use askama_actix::TemplateToResponse;
+use log::info;
 
 // Due sqlite limitations this is the defaul value of posts' slug
 const NO_SLUG: &str = "NO_SLUG";
-
 
 #[get("ping")]
 #[doc(hidden)]
@@ -18,6 +17,7 @@ pub async fn ping() -> impl Responder {
 #[doc(hidden)]
 pub async fn index() -> impl Responder {
     let posts_ = posts::all();
+    info!("Rendering index with {} posts", posts_.len());
     IndexTemplate { posts: &posts_ }.to_response()
 }
 
@@ -40,4 +40,3 @@ fn log_and_render_not_found(message: &str) -> HttpResponse {
     info!("{}; rendering 404", message);
     NotFoundTemplate {}.to_response()
 }
-
