@@ -1,5 +1,6 @@
 # VIdeas
-
+> Moving this project to: https://github.com/TheJarX/videas_blog
+> Basically I want to decouple this from fly.io + use postgres instead of sqlite. In the future this may be DB agnostic
 ## Summary 
 > Your blog, using your VI/m editor (yeah that weird you ~and I~ are). 
 
